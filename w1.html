@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CYNET | Cyber Safety Platform</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: fadeIn 1.8s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #00e5ff;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .btn-main {
+            padding: 14px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 35px;
+            cursor: pointer;
+            background-color: #00e5ff;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #00bcd4;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>CYNET</h1>
+    <h2>Cyber Safety & Complaint Assistance Platform</h2>
+
+    <p>
+        CYNET empowers citizens—especially women and students—
+        to understand cyber crimes, prepare cyber complaint drafts,
+        and safely navigate official reporting systems.
+        <br><br>
+        <strong>Secure • Aware • Empowered</strong>
+    </p>
+
+    <button class="btn-main" onclick="goHome()">
+        Enter CYNET Platform
+    </button>
+
+    <footer>
+        ⚠️ This platform assists users and redirects them to official government portals.
+        It does not directly register cyber complaints.
+    </footer>
+</div>
+
+<script>
+    function goHome() {
+        window.location.href = "home.html";
+    }
+</script>
+
+</body>
+</html>

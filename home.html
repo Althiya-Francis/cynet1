@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CYNET | Home</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(135deg, #f6f8ff, #e9f7f5, #fef6fb);
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        header h1 {
+            margin: 0;
+            color: #5c6bc0;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #5c6bc0;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.12);
+        }
+
+        .card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #5c6bc0;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CYNET</h1>
+    <p>Your cyber safety guide & complaint assistance platform</p>
+</header>
+
+<!-- Intro Section -->
+<div class="intro">
+    <div class="quote">
+        “Your voice matters. Your safety comes first.”
+    </div>
+    <p>
+        CYNET is designed to support you in understanding cyber threats and taking
+        the right steps when something feels wrong online. Whether it’s protecting
+        your passwords, identifying scams, or dealing with cyber bullying, this
+        platform guides you calmly and clearly—without judgment or fear.
+    </p>
+</div>
+
+<!-- Feature Cards -->
+<div class="container">
+    <div class="card-grid">
+
+        <div class="card" onclick="openFeature('password')">
+            <i class="fas fa-lock"></i>
+            <h3>Password Security</h3>
+            <p>Check password strength and learn how to keep your accounts safe.</p>
+        </div>
+
+        <div class="card" onclick="openFeature('phishing')">
+            <i class="fas fa-fish"></i>
+            <h3>Phishing</h3>
+            <p>Types and measures to be taken</p>.</p>
+        </div>
+
+        <div class="card" onclick="openFeature('scam')">
+            <i class="fas fa-credit-card"></i>
+            <h3>Online Scams</h3>
+            <p>Understand common scams and steps taken to survive the situation.</p>
+        </div>
+
+        <div class="card" onclick="openFeature('bullying')">
+            <i class="fas fa-comments"></i>
+            <h3>Cyber Bullying</h3>
+            <p>Know how to respond, report, and protect yourself online.</p>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    ⚠️ CYNET assists users with cyber awareness and complaint guidance.
+    It does not directly register complaints with law enforcement.
+</footer>
+
+<script>
+    function openFeature(feature) {
+        alert("Opening " + feature + " section...");
+        // Later redirect example:
+        // window.location.href = feature + ".html";
+    }
+    function openFeature(feature) {
+
+        if (feature === 'password') {
+            window.location.href = "p1.html";
+        } 
+        else if (feature === 'phishing') {
+            window.location.href = "ph1.html";
+        } 
+        else if (feature === 'scam') {
+            window.location.href = "o.html";
+        } 
+        else if (feature === 'bullying') {
+            window.location.href = "bully.html";
+        }
+
+    }
+</script>
+
+</body>
+</html>

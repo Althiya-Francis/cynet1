@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Safety Support</title>
+
+<style>
+
+/* Page Background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* Back Link */
+.back-link {
+    padding: 15px 40px;
+    font-size: 14px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #0d47a1;
+    font-weight: 500;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #0d47a1, #1565c0);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Content Container */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Card Style */
+.card {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Card Headings */
+.card h2 {
+    margin-top: 0;
+    color: #1565c0;
+    font-size: 22px;
+}
+
+/* Text */
+.card p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* List */
+.card ul {
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Password Checker */
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.strength {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.weak { color: red; }
+.medium { color: orange; }
+.strong { color: green; }
+
+</style>
+</head>
+
+<body>
+
+<div class="back-link">
+    <a href="#">← Back to Home</a>
+</div>
+
+<div class="hero">
+    <h1>Password Safety & Security Support</h1>
+    <p>You deserve to feel safe — both online and offline.</p>
+</div>
+
+<div class="container">
+
+    <!-- Password Checker Card -->
+    <div class="card">
+        <h2>🔎 Check Your Password Strength</h2>
+        <p>Enter your password below to see how strong it is.</p>
+        <input type="password" id="passwordInput" placeholder="Enter your password">
+        <div id="strengthMessage" class="strength"></div>
+    </div>
+
+    <!-- Strong Password Tips -->
+    <div class="card">
+        <h2>🔐 Create a Strong Password</h2>
+        <ul>
+            <li>Aim for 14–16+ characters. Longer passwords are exponentially harder to crack.</li>
+            <li>Mix uppercase (A-Z), lowercase (a-z), numbers (0-9), and symbols (!, @, #, $, etc.).</li>
+            <li>Never reuse passwords across different sites.</li>
+            <li>Do not use personal info, common words, or simple sequences.</li>
+        </ul>
+    </div>
+
+    <!-- If Hacked -->
+    <div class="card">
+        <h2>🚨 If Your Password Is Hacked</h2>
+        <ul>
+            <li><strong>Change your password right away:</strong> Use a safe device and create a new strong password.</li>
+            <li><strong>Update other accounts:</strong> Change reused passwords everywhere.</li>
+            <li><strong>Scan for viruses:</strong> Run a security check on your device.</li>
+            <li><strong>Enable MFA:</strong> Add Multi-Factor Authentication.</li>
+            <li><strong>Check for unusual activity:</strong> Look for strange logins or changes.</li>
+            <li><strong>Inform your bank:</strong> If financial information was exposed.</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+
+/* Password Strength Checker Logic */
+const passwordInput = document.getElementById("passwordInput");
+const strengthMessage = document.getElementById("strengthMessage");
+
+passwordInput.addEventListener("input", function () {
+    const password = passwordInput.value;
+    let strength = 0;
+
+    if (password.length >= 8) strength++;
+    if (/[A-Z]/.test(password)) strength++;
+    if (/[a-z]/.test(password)) strength++;
+    if (/[0-9]/.test(password)) strength++;
+    if (/[^A-Za-z0-9]/.test(password)) strength++;
+if (password.length === 0) {
+        strengthMessage.textContent = "";
+    } else if (strength <= 2) {
+        strengthMessage.textContent = "Weak Password";
+        strengthMessage.className = "strength weak";
+    } else if (strength === 3 || strength === 4) {
+        strengthMessage.textContent = "Medium Strength Password";
+        strengthMessage.className = "strength medium";
+    } else {
+        strengthMessage.textContent = "Strong Password";
+        strengthMessage.className = "strength strong";
+    }
+});
+
+</script>
+
+</body>
+</html>

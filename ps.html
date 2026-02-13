@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Password Strength Checker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- zxcvbn -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(180deg, #f4f6fb, #e9edf5);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* TOP */
+        padding-top: 40px;       /* space from top */
+    }
+
+    .wrapper {
+        position: relative;
+        width: 380px;
+    }
+
+    /* Floating top tab */
+    .top-tab {
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #3b82f6;
+        color: #f6d4ff;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .card {
+        background: #ddc8eb;
+        border-radius: 16px;
+        padding: 28px 42px 24px;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    h2 {
+        margin: 10px 0 6px;
+        font-size: 22px;
+    }
+
+    p {
+        color: #555;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #3b82f6;
+    }
+
+    .meter {
+        height: 10px;
+        background: #e5e7eb;
+        border-radius: 6px;
+        overflow: hidden;
+        margin-top: 16px;
+    }
+
+    .meter-fill {
+        height: 100%;
+        width: 0%;
+        transition: width 0.3s ease;
+    }
+
+    .strength {
+        margin-top: 12px;
+        font-weight: 600;
+    }
+
+    .time {
+        font-size: 13px;
+        color: #666;
+        margin-top: 6px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <div class="top-tab">Password Strength</div>
+
+    <div class="card">
+        <h2>Check Your Password</h2>
+        <p>Your password is checked locally</p>
+
+        <input type="password" id="password" placeholder="Enter password">
+
+        <div class="meter">
+            <div id="meterFill" class="meter-fill"></div>
+        </div>
+
+        <div class="strength" id="strengthText">Strength: —</div>
+        <div class="time" id="crackTime"></div>
+    </div>
+</div>
+
+<script>
+    const passwordInput = document.getElementById("password");
+    const meterFill = document.getElementById("meterFill");
+    const strengthText = document.getElementById("strengthText");
+    const crackTime = document.getElementById("crackTime");
+
+    const levels = [
+        { label: "Very Weak", color: "#dc2626", width: "20%" },
+        { label: "Weak", color: "#f97316", width: "40%" },
+        { label: "Fair", color: "#facc15", width: "60%" },
+        { label: "Strong", color: "#22c55e", width: "80%" },
+        { label: "Very Strong", color: "#16a34a", width: "100%" }
+    ];
+
+    passwordInput.addEventListener("input", () => {
+        const pwd = passwordInput.value;
+
+        if (!pwd) {
+            meterFill.style.width = "0%";
+            strengthText.textContent = "Strength: —";
+            crackTime.textContent = "";
+            return;
+        }
+
+        const result = zxcvbn(pwd);
+        const level = levels[result.score];
+
+        meterFill.style.width = level.width;
+        meterFill.style.background = level.color;
+        strengthText.textContent = "Strength: " + level.label;
+        crackTime.textContent =
+            "Estimated crack time: " +
+            result.crack_times_display.offline_slow_hashing_1e4_per_second;
+    });
+</script>
+
+</body>
+</html>
