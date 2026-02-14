@@ -13,16 +13,16 @@
 - Member 2: [Rifa Parveen K K] - [Government Engineering College Kozhikode]
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[ https://althiya-francis.github.io/cynet1/]
 
 ### Project Description
-[2-3 lines about what your project does]
+[cyber crime awareness and safety measures]
 
 ### The Problem statement
-[What problem are you solving?]
+[To help people understand the measures to be taken during cyber crimes]
 
 ### The Solution
-[How are you solving it?]
+[By providing measures and websites to file complaint]
 
 ---
 
@@ -421,4 +421,5 @@ Made with ❤️ at TinkerHub﻿# cynet1
 # cynet1
 # cynet1
 # cynet1
+
 
