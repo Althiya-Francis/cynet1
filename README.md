@@ -61,10 +61,9 @@ List the key features of your project:
 
 
 
-Made with ❤️ at TinkerHub﻿# cynet1
-# cynet1
-# cynet1
-# cynet1
+Made with ❤️ at TinkerHub﻿#
+
+
 
 
 
