@@ -1,6 +1,5 @@
-<p align="center">
-  <img src="./img.png" alt="Project Banner" width="100%">
-</p>
+<img width="1370" height="855" alt="Screenshot 2026-02-14 071728" src="https://github.com/user-attachments/assets/670051e4-8218-48ce-b9dc-26fd52a6d37a" />
+
 
 # [cynet] 🎯
 
@@ -47,21 +46,19 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
 
 
 
+<img width="1835" height="904" alt="Screenshot 2026-02-14 065721" src="https://github.com/user-attachments/assets/df26dd0a-59d2-469c-bfe3-f838ba581b27" />
+<p>HOMEPAGE OF CYNET WHERE WE CAN 4 ICONS FOR 4 DIFFERENT CYBER CRIMES</p>
 
-
+<img width="1814" height="882" alt="Screenshot 2026-02-14 065814" src="https://github.com/user-attachments/assets/1d9db34d-3c3b-42e9-b72e-47aadcb83450" />
+<P>A SMALL PORTION AFTER CLICKING THE CYBER BULLYING</P>
+<img width="1885" height="838" alt="Screenshot 2026-02-14 065839" src="https://github.com/user-attachments/assets/2f4f6cf2-84e2-4513-b78c-d8592a04066d" />
+<P>ON CLICK FILE COMPLAINT WE ARE DIRECTED TO cybercrime.gov.in</P>
 
 Made with ❤️ at TinkerHub﻿#
+
 
 
 
